@@ -3,9 +3,12 @@
     <h1><%= place.name %></h1>
     <i><%= place.address %></i><br /><br />
     <p><%= place.description %></p><br />
-    <!--<p><%= place.id %></p>-->
+    <p><%= place.id %></p>
     <br />
   </div>
 
   <hr />
 <% end %>
+
+
+<%= will_paginate @place, renderer: BootstrapPagination::Rails, previous_label: "Older", next_label: "Newer", iner_window: 1, outer_window: 0 %>
