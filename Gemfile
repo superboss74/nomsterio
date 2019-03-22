@@ -76,4 +76,8 @@ end
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.2'
 
+# Adding simple forms
 gem 'simple_form'
+
+# Adding fonts Awesome
+gem "font-awesome-rails"
