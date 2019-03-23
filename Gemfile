@@ -81,3 +81,7 @@ gem 'simple_form'
 
 # Adding fonts Awesome
 gem "font-awesome-rails"
+
+# Adding Devise
+
+gem 'devise'
