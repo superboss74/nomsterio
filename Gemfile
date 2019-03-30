@@ -65,8 +65,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 
 # Adding Bootstrap 4 and it's dependencies
+#gem 'popper_js', '~> 1.14.5'
 gem 'popper_js', '~> 1.11.1'
 gem 'bootstrap', '4.0.0.alpha6'
+#gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
@@ -83,5 +85,11 @@ gem 'simple_form'
 gem "font-awesome-rails"
 
 # Adding Devise
-
 gem 'devise'
+
+# Adding Geocoder
+gem "geocoder"
+
+#Adding Figaro
+#Configuration values often include sensitive information. Figaro strives to be secure by default by encouraging a convention that keeps configuration out of Git.
+gem "figaro"

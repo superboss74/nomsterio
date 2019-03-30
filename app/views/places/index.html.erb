@@ -3,7 +3,6 @@
     <h1><%= link_to place.name, place_path(place) %></h1><br />
     <i><%= place.address %></i><br />
     <p><%= place.description %></p><br />
-    <!--<p><%= place.id %></p><br />-->
 
     <% if place.user.present? %>
       <small><%= place.user.email %></small>
@@ -12,4 +11,4 @@
 
 <% end %>
 
-<%= will_paginate @place, renderer: BootstrapPagination::Rails, previous_label: "Older", next_label: "Newer", iner_window: 1, outer_window: 0 %>
+<%= will_paginate @place, renderer: BootstrapPagination::Rails, previous_label: "Older", next_label: "Newer", inner_window: 1, outer_window: 0 %>

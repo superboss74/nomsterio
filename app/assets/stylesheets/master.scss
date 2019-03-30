@@ -12,8 +12,8 @@
  *
  *= require_tree .
  *= require_self
- */
-
+npauthor@earthlink.net
+*/
 @import "bootstrap";
 @import "font-awesome";
 
@@ -21,14 +21,19 @@
  * Testing  using Google Fonts
 @import url('https://fonts.googleapis.com/css?family=Abel');
 */
+
+
 h1, h2, h3, h4, h5, h6 {
   margin:0;
   padding:0;
 }
 
 body {
-  background: url('/assets/crossword.png');
-  font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  background: image_url('circuit.png');
+  /*font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;*/
+  font-family: 'acherus_grotesqueregular', sans-serif;
+  font-weight: 600px;
+  /*letter-spacing: -0.3px*/
 }
 
 .navbar {
