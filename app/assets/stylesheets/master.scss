@@ -57,18 +57,30 @@ blockquote p {
   display: inline;
 }
 
-
 .navbar {
   background: image_url('prism.png');
-  box-shadow: 0px 1px 3px #2a2a2a;
-}
+  box-shadow: 0px 1px 3px #2a2a2a;}
 
-.navbar-inverse .navbar-brand {
+
+.navbar-light .navbar-brand {
   color: #E3E85A;
   /*font-family: 'Abel', sans-serif;*/
   font-family: 'acherus_grotesqueregular', sans-serif;
   font-size: 26px;
 }
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(255,255,255,0.5);
+  border-color: #333538;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: rgba(255,255,255,0.5);
+} 
 
 .clear {
     clear: both;
