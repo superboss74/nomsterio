@@ -2,11 +2,6 @@ class PlacesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 def index
-  # or, use an explicit "per page" limit:
-  #@places = Post.paginate(:page => params[:page], :per_page => 10)
-  #@places = Place.all.order("RANDOM()").paginate(page: params[:page], per_page: 10)
-  #@places = Place.all.order("created_at DESC").paginate(page: params[:page], per_page: 2)
-  #@places = Place.all.order("id DESC").paginate(page: params[:page], per_page: 6)
   @places = Place.all.paginate(:page => params[:page], :per_page => 6).order(created_at: :desc)
 end
 
@@ -26,6 +21,7 @@ end
 def show
   @place = Place.find(params[:id])
   @comment = Comment.new
+  @photo = Photo.new
 end
 
 def edit

@@ -91,3 +91,6 @@ gem 'geocoder', '~> 1.5', '>= 1.5.1'
 #Adding Figaro
 #Configuration values often include sensitive information. Figaro strives to be secure by default by encouraging a convention that keeps configuration out of Git.
 gem "figaro"
+
+# Adding carrierwave
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'

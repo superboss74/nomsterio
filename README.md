@@ -1,13 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My second ever RnR app
 
-Things you may want to cover:
-
-* Ruby version
+* Ruby Version 2.5.3p105
+* Rails Version 5.2.3
 
 ## System dependencies
+
+Check Gemfile for Gem dependencies:
+
+* jquery-rails
+* popper_js
+* bootstrap
+* will_paginate
+* simple_form
+* font-awesome-rails
+* devise
+* geocoder
+* figaro
+* carrierwave
 
 ### Google Geocoding API
 
