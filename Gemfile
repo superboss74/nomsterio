@@ -94,3 +94,6 @@ gem "figaro"
 
 # Adding carrierwave
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+
+# Configuring carrierwave to use AWS
+gem "fog-aws"
