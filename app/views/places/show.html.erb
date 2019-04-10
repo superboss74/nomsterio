@@ -36,17 +36,21 @@
   </div>
   <br />
 
- <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div c lass="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
-        </div>
-        <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
+
+</div>
+
+<!-- Comments Modal Section -->
+
+<div class="modal fade" id="commentModalLong" tabindex="-1" role="dialog" aria-labelledby="commentModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="commentModalLongTitle">Add a comment</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
           <div class="modal-body">
             <%= f.input :message %>
             <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
@@ -56,81 +60,79 @@
             <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
           </div>
         <% end %>
-      </div>
     </div>
   </div>
+</div>
 
-  <div class="col-10 offset-1">
-    <h1 class="float-left">Comments</h1>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#myModal">
-      Add a comment
-    </button>
-  </div>
+<div class="col-10 offset-1">
+  <h1 class="float-left">Comments</h1>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#commentModalLong">
+    Add a Comment
+  </button>
+</div>
 
-  <div class="clear"></div>
+<div class="clear"></div>
 
-  <div class="row">
-    <% @place.comments.each do |comment| %>
-      <div class="col-12 col-sm-6">
-        <blockquote>
-          <% if comment.humanized_rating.present? %>
-          <b><%= comment.humanized_rating %></b> -
-          <% end %>
-          <%= comment.message %>
-          <small><%= comment.user.email %></small>
-        </blockquote>
-      </div>
-    <% end %>
-  </div>
-
-  <!-- Photos Section -->
-
-  <!-- Modal -->
-  <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div c lass="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-          <h4 class="modal-title" id="photoModalLabel">Add a photo</h4>
-        </div>
-        <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-          <div class="modal-body">
-            <%= f.input :picture %>
-            <%= f.input :caption %>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
-          </div>
+<div class="row">
+  <% @place.comments.each do |comment| %>
+    <div class="col-12 col-sm-6">
+      <blockquote>
+        <% if comment.humanized_rating.present? %>
+        <b><%= comment.humanized_rating %></b> -
         <% end %>
+        <%= comment.message %>
+        <small><%= comment.user.email %></small>
+      </blockquote>
+    </div>
+  <% end %>
+</div>
+
+<!-- Photos Section Modal -->
+
+<div class="modal fade" id="photoModalLong" tabindex="-1" role="dialog" aria-labelledby="photoModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="photoModalLongTitle">Add a photo</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+        <div class="modal-body">
+          <%= f.input :picture %>
+          <%= f.input :caption %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
     </div>
   </div>
+</div>
 
-  <div class="col-10 offset-1">
-    <h1 class="float-left">Photos</h1>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#photoModal">
-      Add a Photo
-    </button>
-  </div>
+<div class="col-10 offset-1">
+  <h1 class="float-left">Photos</h1>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#photoModalLong">
+    Add a Photo
+  </button>
+</div>
 
-  <div class="clear"></div>
+<div class="clear"></div>
 
-  <div class="row">
-    <% @place.photos.each do |photo| %>
-      <div class="col-12 col-sm-6">
-        <blockquote>
-          <% if photo.picture.present? %>
-            <%= photo.image %>
-            <%= photo.caption %>
-          <% end %>
-          <small><%= photo.user.email %></small>
-        </blockquote>
-      </div>
-    <% end %>
-  </div>
+<div class="row">
+  <% @place.photos.each do |photo| %>
+    <div class="col-12 col-sm-6">
+      <blockquote>
+        <% if photo.picture.present? %>
+          <img src="<%= photo.picture %>" class="img-fluid img-thumbnail">
+          <%= photo.caption %>
+        <% end %>
+        <small><%= photo.user.email %></small>
+      </blockquote>
+    </div>
+  <% end %>
 </div>
