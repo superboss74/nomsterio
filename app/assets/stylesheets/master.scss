@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5, h6 {
   padding:0;
 }
 
+
 body {
   background: image_url('circuit.png');
   /*font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;*/
@@ -57,20 +58,44 @@ blockquote p {
   display: inline;
 }
 
+a {
+  background: none;
+}
+
+a:visited {
+  color: rgb(68, 145, 233);
+}
+
+a:link {
+  outline: none;
+  text-decoration: none;
+  background: none;
+  color: #265301;
+}
+
+a:active {
+  background: none;
+  color: rgb(90, 167, 90);
+}
+
 .navbar {
   background: image_url('prism.png');
-  box-shadow: 0px 1px 3px #2a2a2a;}
+  box-shadow: 0px 1px 3px #2a2a2a;
+  color: white;
+}
 
 
 .navbar-light .navbar-brand {
-  color: #E3E85A;
+  color: #0986F3;
   /*font-family: 'Abel', sans-serif;*/
   font-family: 'acherus_grotesqueregular', sans-serif;
   font-size: 26px;
+  background: none;
+  margin-bottom: -2px;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: rgba(255,255,255,0.5);
+  color: rgba(237, 241, 243, 0.911);
   border-color: #333538;
 }
 
