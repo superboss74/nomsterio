@@ -4,22 +4,28 @@ Rails.application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
-  config.action_mailer.delivery_method = :smtp
+
+
   config.action_mailer.default_url_options = { host: 'localhost:3030' }
   config.action_mailer.perform_deliveries = true
-   # Don't care if the mailer can't send.
-   config.action_mailer.raise_delivery_errors = false
-   config.action_mailer.default :charset => "utf-8"
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "example.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV['GMAIL_ADDRESS'],
-    password: ENV['GMAIL_PASSWORD']
-  }
+  config.action_mailer.raise_delivery_errors = false
 
+# Testing out Mailer in Nomsterio Dev
+# comment out next line
+  config.action_mailer.delivery_method = :test
+# uncomment the next 11 lines if you need to test locally in Dev
+#  config.action_mailer.delivery_method = :smtp
+#  config.action_mailer.default :charset => "utf-8"
+#  config.action_mailer.smtp_settings = {
+#    address: "smtp.gmail.com",
+#    port: 587,
+#    domain: "example.com",
+#    authentication: "plain",
+#    enable_starttls_auto: true,
+#    user_name: ENV['GMAIL_ADDRESS'],
+#    password: ENV['GMAIL_PASSWORD']
+#  }
+ 
   config.cache_classes = false
 
   # Do not eager load code on boot.
