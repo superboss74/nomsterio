@@ -97,3 +97,5 @@ gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 
 # Configuring carrierwave to use AWS
 gem "fog-aws"
+
+gem 'rubocop-performance'
